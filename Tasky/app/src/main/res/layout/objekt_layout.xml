@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="150dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:background="@color/colorPrimary"
+        android:id="@+id/tvPrioritet" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_toRightOf="@+id/tvPrioritet"
+        android:text="Naslov"
+        android:textSize="50dp"
+        android:id="@+id/tvNaslov" />
+    <TextView
+        android:id="@+id/tvBiljeska"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNaslov"
+        android:layout_toRightOf="@+id/tvPrioritet"
+        android:text="biljeska"
+        android:maxLines="10"
+        android:textSize="30dp"
+       />
+    <Switch
+        android:id="@+id/cbAlarm"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tvBiljeska"
+        android:layout_toRightOf="@id/tvPrioritet"/>
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/postaviAlarm"
+        android:layout_below="@+id/tvBiljeska"
+        android:layout_toRightOf="@+id/cbAlarm"
+        android:layout_toEndOf="@+id/cbAlarm"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
