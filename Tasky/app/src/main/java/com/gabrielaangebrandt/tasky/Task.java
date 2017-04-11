@@ -3,10 +3,11 @@ package com.gabrielaangebrandt.tasky;
 /**
  * Created by Gabriela on 8.4.2017..
  */
-public class Objekt {
-    String naslov, opis, prioritet;
+public class Task {
+    String naslov, opis;
+    int prioritet;
 
-    public Objekt(String naslov, String opis, String prioritet) {
+    public Task(String naslov, String opis, int prioritet) {
         this.naslov = naslov;
         this.opis = opis;
         this.prioritet = prioritet;
@@ -28,11 +29,11 @@ public class Objekt {
         this.opis = opis;
     }
 
-    public String getPrioritet() {
+    public int getPrioritet() {
         return prioritet;
     }
 
-    public void setPrioritet(String prioritet) {
+    public void setPrioritet(int prioritet) {
         this.prioritet = prioritet;
     }
 }

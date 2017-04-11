@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvNaslov"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvnaslov"
+        android:textSize="40dp"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/etNaslov"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/etnaslov"
+        android:layout_below="@+id/tvNaslov"
+        android:textSize="30dp"
+        android:padding="10dp"
+        android:textAlignment="center"/>
+    <TextView
+        android:id="@+id/tvOpis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvopis"
+        android:textSize="40dp"
+        android:layout_below="@id/etNaslov"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/etOpis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/etopis"
+        android:textSize="30dp"
+        android:layout_below="@+id/tvOpis"
+        android:padding="10dp"
+        android:textAlignment="center"/>
+    <TextView
+        android:id="@+id/tvPrioritet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvprioritet"
+        android:textSize="40dp"
+        android:layout_below="@+id/etOpis"
+        android:padding="10dp"/>
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tvPrioritet"
+        android:padding="10dp"></Spinner>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:text="DODAJ ZADATAK"/>
+</RelativeLayout>
