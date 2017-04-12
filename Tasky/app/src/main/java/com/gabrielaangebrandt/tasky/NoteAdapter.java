@@ -13,13 +13,20 @@ import java.util.ArrayList;
 /**
  * Created by Gabriela on 8.4.2017..
  */
-public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder>{
+public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     ArrayList<Task> alTasks;
-    public NoteAdapter(ArrayList<Task> biljeske){ alTasks =biljeske; }
+    NotesDBHelper notesDBHelper;
+    Context context;
+
+
+    public NoteAdapter(ArrayList<Task> biljeske) {
+        alTasks = biljeske;
+
+    }
 
     @Override
     public NoteAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
+        context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.task_layout, parent, false);
         ViewHolder noteViewHolder = new ViewHolder(view);
@@ -56,16 +63,18 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder>{
 
         @Override
         public boolean onLongClick(View v) {
-            alTasks.remove(getAdapterPosition());
-            notifyItemRemoved(getAdapterPosition());
-            notifyItemRangeChanged(getAdapterPosition(), alTasks.size());
-            notifyDataSetChanged();
-            return false;
-        }
+            NotesDBHelper notesDBHelper = new NotesDBHelper(context);
+        //    int position = alTasks.get(getAdapterPosition()).getID();
+            notesDBHelper.deleteEntry(alTasks.get(getAdapterPosition()).getID());
+           // boolean isDeleted = notesDBHelper.deleteEntry(Long.parseLong(position));
 
+                alTasks.remove(getAdapterPosition());
+                notifyItemRemoved(getAdapterPosition());
+
+                notifyDataSetChanged();
+
+            return false ;
+        }
+        }
     }
-    public void insert(Task task) {
-        this.alTasks.add(task);
-        this.notifyDataSetChanged();
-    }
-}
+

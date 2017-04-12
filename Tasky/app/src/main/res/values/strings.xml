@@ -1,18 +1,25 @@
 <resources>
     <string name="app_name">Tasky</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_list_activtiy">ListActivtiy</string>
+    <string name="title_activity_list_activtiy">Tasky</string>
     <string name="postaviAlarm">Postavi alarm</string>
     <string name="title_activity_kategorija">KategorijaActivity</string>
     <string name="title_activity_task">Zadaci</string>
     <string name="etnaslov">Unesi naslov zadatka</string>
     <string name="tvnaslov">Naslov zadatka:</string>
-    <string name="tvopis">Opis zadatka:</string>
-    <string name="etopis">Unesite opis</string>
+    <string name="tvopis">Kategorija:</string>
     <string name="tvprioritet">Odaberite prioritet:</string>
     <string-array name="prioritet">
         <item>Visoki</item>
         <item>Srednji</item>
         <item>Niski</item>
+    </string-array>
+
+    <string-array name="kategorija">
+        <item>Kupovina</item>
+        <item>Fakultetske obaveze</item>
+        <item>Posao</item>
+        <item>Obiteljska obaveza</item>
+        <item>Ostalo</item>
     </string-array>
 </resources>

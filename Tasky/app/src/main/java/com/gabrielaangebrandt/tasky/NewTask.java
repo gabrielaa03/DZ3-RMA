@@ -1,7 +1,10 @@
 package com.gabrielaangebrandt.tasky;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,17 +14,19 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 /**
  * Created by Gabriela on 11.4.2017..
  */
 public class NewTask extends Activity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
-    public static final String NOVI_NASLOV =" naslov" ;
-    public static final String NOVI_OPIS = "opis";
-    public static final String BOJA = "boja";
+
     Button button;
-    EditText etNaslov, etOpis;
-    Spinner spinner;
-    String noviNaslov, noviOpis, color;
+    EditText etNaslov;
+    Spinner spinner, spinnerKategorija;
+    String color, kategorija;
+    int color1;
+
 
 
     @Override
@@ -34,20 +39,27 @@ public class NewTask extends Activity implements View.OnClickListener, AdapterVi
     private void setUpUI() {
         this.button = (Button) findViewById(R.id.button);
         this.etNaslov = (EditText) findViewById(R.id.etNaslov);
-        this.etOpis = (EditText) findViewById(R.id.etOpis);
         this.spinner = (Spinner) findViewById(R.id.spinner);
+        this.spinnerKategorija = (Spinner) findViewById(R.id.spinnerKategorija);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.prioritet, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
+                R.array.kategorija, android.R.layout.simple_spinner_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerKategorija.setAdapter(adapter1);
+        spinnerKategorija.setOnItemSelectedListener(this);
+
         button.setOnClickListener(this);
     }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String odabir = spinner.getSelectedItem().toString();
+        kategorija = spinnerKategorija.getSelectedItem().toString();
         switch(odabir){
             case "Visoki":
                 color = "#FC0606";
@@ -66,14 +78,20 @@ public class NewTask extends Activity implements View.OnClickListener, AdapterVi
         Toast.makeText(getApplicationContext(),"Niste odabrali prioritet.", Toast.LENGTH_SHORT).show();
     }
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this, ListActivtiy.class);
-        intent.putExtra(NOVI_NASLOV, etNaslov.getText().toString());
-        intent.putExtra(NOVI_OPIS,  etOpis.getText().toString());
-        intent.putExtra(BOJA, color);
+        if(Objects.equals(etNaslov.getText().toString(), "") || etNaslov.getText().toString() == null){
+            etNaslov.setError("Unesite naziv zadatka.");
+        }
+        else {
+            color1 = Color.parseColor(color);
+            Task task = new Task(getTaskId(), etNaslov.getText().toString(), kategorija, color1);
+            NotesDBHelper.getInstance(this).insertTask(task);
+            Intent intent = new Intent(this, ListActivtiy.class);
+            this.startActivity(intent);
 
-        this.startActivity(intent);
+        }
     }
 
 

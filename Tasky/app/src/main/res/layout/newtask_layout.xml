@@ -27,11 +27,10 @@
         android:textSize="40dp"
         android:layout_below="@id/etNaslov"
         android:padding="10dp"/>
-    <EditText
-        android:id="@+id/etOpis"
+    <Spinner
+        android:id="@+id/spinnerKategorija"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/etopis"
         android:textSize="30dp"
         android:layout_below="@+id/tvOpis"
         android:padding="10dp"
@@ -42,13 +41,14 @@
         android:layout_height="wrap_content"
         android:text="@string/tvprioritet"
         android:textSize="40dp"
-        android:layout_below="@+id/etOpis"
+        android:layout_below="@+id/spinnerKategorija"
         android:padding="10dp"/>
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@+id/tvPrioritet"
+        android:textAlignment="center"
         android:padding="10dp"></Spinner>
 
     <Button

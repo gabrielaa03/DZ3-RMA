@@ -5,12 +5,13 @@ package com.gabrielaangebrandt.tasky;
  */
 public class Task {
     String naslov, opis;
-    int prioritet;
+    int prioritet,id ;
 
-    public Task(String naslov, String opis, int prioritet) {
+    public Task(int id, String naslov, String opis, int prioritet) {
         this.naslov = naslov;
         this.opis = opis;
         this.prioritet = prioritet;
+        this.id = id;
     }
 
     public String getNaslov() {
@@ -36,4 +37,8 @@ public class Task {
     public void setPrioritet(int prioritet) {
         this.prioritet = prioritet;
     }
+
+    public int getID(){return id;}
+
+    public void setID(int id) {this.id = id;}
 }
