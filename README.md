@@ -4,3 +4,4 @@ Literatura:
   1. http://stackoverflow.com/questions/41042024/delete-data-from-database-inside-recycleview
   2. http://stackoverflow.com/questions/34979957/android-status-bar-is-white
   3. http://stackoverflow.com/questions/24618829/how-to-add-dividers-and-spaces-between-items-in-recyclerview
+  4. Materijali s laboratorijskih vježbi
