@@ -64,14 +64,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         @Override
         public boolean onLongClick(View v) {
             NotesDBHelper notesDBHelper = new NotesDBHelper(context);
-        //    int position = alTasks.get(getAdapterPosition()).getID();
             notesDBHelper.deleteEntry(alTasks.get(getAdapterPosition()).getID());
-           // boolean isDeleted = notesDBHelper.deleteEntry(Long.parseLong(position));
+            alTasks.remove(getAdapterPosition());
+            notifyItemRemoved(getAdapterPosition());
 
-                alTasks.remove(getAdapterPosition());
-                notifyItemRemoved(getAdapterPosition());
+            notifyDataSetChanged();
 
-                notifyDataSetChanged();
+
 
             return false ;
         }

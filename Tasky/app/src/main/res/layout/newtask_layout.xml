@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:background="@color/grey">/>
     <TextView
         android:id="@+id/tvNaslov"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tvnaslov"
         android:textSize="40dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="60dp"
         android:padding="10dp"/>
     <EditText
         android:id="@+id/etNaslov"
@@ -25,6 +27,7 @@
         android:layout_height="wrap_content"
         android:text="@string/tvopis"
         android:textSize="40dp"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_below="@id/etNaslov"
         android:padding="10dp"/>
     <Spinner
@@ -41,6 +44,7 @@
         android:layout_height="wrap_content"
         android:text="@string/tvprioritet"
         android:textSize="40dp"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_below="@+id/spinnerKategorija"
         android:padding="10dp"/>
     <Spinner
@@ -56,5 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:text="DODAJ ZADATAK"/>
+        android:text="DODAJ ZADATAK"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"/>
 </RelativeLayout>

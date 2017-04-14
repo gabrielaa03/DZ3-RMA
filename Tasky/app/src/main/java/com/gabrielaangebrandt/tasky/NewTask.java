@@ -62,13 +62,13 @@ public class NewTask extends Activity implements View.OnClickListener, AdapterVi
         kategorija = spinnerKategorija.getSelectedItem().toString();
         switch(odabir){
             case "Visoki":
-                color = "#FC0606";
+                color = "#C10808";
                 break;
             case "Srednji":
-                color = "#FCFC06";
+                color = "#EBDB00";
                 break;
             case "Niski":
-                color = "#2FD805";
+                color = "#048B08";
                 break;
         }
     }
@@ -88,7 +88,7 @@ public class NewTask extends Activity implements View.OnClickListener, AdapterVi
             color1 = Color.parseColor(color);
             Task task = new Task(getTaskId(), etNaslov.getText().toString(), kategorija, color1);
             NotesDBHelper.getInstance(this).insertTask(task);
-            Intent intent = new Intent(this, ListActivtiy.class);
+            Intent intent = new Intent(this, ListActivity.class);
             this.startActivity(intent);
 
         }

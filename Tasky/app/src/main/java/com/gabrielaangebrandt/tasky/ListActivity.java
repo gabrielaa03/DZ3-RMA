@@ -12,9 +12,9 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-public class ListActivtiy extends AppCompatActivity implements View.OnClickListener {
+public class ListActivity extends AppCompatActivity implements View.OnClickListener {
 
-     public RecyclerView RV;
+    public RecyclerView RV;
     RecyclerView.LayoutManager rvLayoutManager;
     NoteAdapter noteAdapter;
     Button add;
@@ -24,7 +24,7 @@ public class ListActivtiy extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_list_activity);
+        setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         this.setUpUI();

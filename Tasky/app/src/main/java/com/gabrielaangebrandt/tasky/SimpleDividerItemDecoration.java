@@ -9,7 +9,7 @@ import android.view.View;
 /**
  * Created by Gabriela on 11.4.2017..
  */
-class SimpleDividerItemDecoration extends RecyclerView.ItemDecoration {
+public class SimpleDividerItemDecoration extends RecyclerView.ItemDecoration {
     private Drawable mDivider;
 
     public SimpleDividerItemDecoration(Context context) {
